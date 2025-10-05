@@ -40,8 +40,16 @@ Promise.all([promise1,promise2,promise3]).then((data)=>{
 			new_cell_1.textContent=`Promise ${x+1}`
 			new_cell_2.textContent=`${data[x]}`
 		}
+	let new_row=table_.insertRow(-1);
+	let new_cell3=new_row.insertCell(0)
+	let new_cell4=new_row.insertCell(1)
+	new_cell3.textContent="Total";
+	new_cell4.textContent=Math.max(...data)
+	
 
 
+	}).finally((data)=>{
+	console.log(Math.max(data))
 	})
 
 
