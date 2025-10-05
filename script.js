@@ -1,6 +1,7 @@
 //your JS code here. If required.
 const table_=document.querySelector("#output");
 let row1=table_.insertRow(-1)
+row1.id="loading";
 let cell1=row1.insertCell(0)
 // let cell2=row1.insertCell(1)
 // cell2.textContent="xyz"
@@ -44,12 +45,12 @@ Promise.all([promise1,promise2,promise3]).then((data)=>{
 	let new_cell3=new_row.insertCell(0)
 	let new_cell4=new_row.insertCell(1)
 	new_cell3.textContent="Total";
-	new_cell4.textContent=Math.max(...data)
+	new_cell4.textContent=Math.max(...data).toFixed(3)
 	
 
 
-	}).finally((data)=>{
-	console.log(Math.max(data))
+	}).finally(()=>{
+	console.log("got it");
 	})
 
 
